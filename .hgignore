@@ -26,6 +26,9 @@ config.log
 
 twolame.pc
 
+# Backups
+*~
+
 # RAD Studio-specific
 *.local
 
