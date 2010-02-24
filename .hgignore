@@ -8,8 +8,12 @@ syntax: glob
 twolame.exe
 stwolame.exe
 libtwolame.la
+libtwolame.lib
+*.map
+*.tds
 *.o
 *.lo
+*.obj
 .libs/
 .deps/
 
@@ -21,6 +25,9 @@ config.status
 config.log
 
 twolame.pc
+
+# RAD Studio-specific
+*.local
 
 # NetBeans-specific
 nbproject/private/
