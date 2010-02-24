@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{DFAC6F99-DE5B-4901-9ADA-8A305C6BBE2B}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="libtwolame\libtwolame.cbproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="simplefrontend\stwolame.cbproj">
+				<Dependencies>libtwolame\libtwolame.cbproj</Dependencies>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="libtwolame">
+			<MSBuild Projects="libtwolame\libtwolame.cbproj"/>
+		</Target>
+		<Target Name="libtwolame:Clean">
+			<MSBuild Targets="Clean" Projects="libtwolame\libtwolame.cbproj"/>
+		</Target>
+		<Target Name="libtwolame:Make">
+			<MSBuild Targets="Make" Projects="libtwolame\libtwolame.cbproj"/>
+		</Target>
+		<Target DependsOnTargets="libtwolame" Name="stwolame">
+			<MSBuild Projects="simplefrontend\stwolame.cbproj"/>
+		</Target>
+		<Target DependsOnTargets="libtwolame:Clean" Name="stwolame:Clean">
+			<MSBuild Targets="Clean" Projects="simplefrontend\stwolame.cbproj"/>
+		</Target>
+		<Target DependsOnTargets="libtwolame:Make" Name="stwolame:Make">
+			<MSBuild Targets="Make" Projects="simplefrontend\stwolame.cbproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="libtwolame;stwolame"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="libtwolame:Clean;stwolame:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="libtwolame:Make;stwolame:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
