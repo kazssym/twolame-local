@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <getopt.h>
 
@@ -562,8 +563,9 @@ open_output_file( char* filename )
 	// Do they want STDOUT ?
 	if (strncmp( filename, "-", 1 )==0) {
 		file = stdout;
+                _setmode (fileno (file), O_BINARY);
 	} else {
-		file = fopen(filename, "w");
+		file = fopen(filename, "wb");
 	}
 	
 	// Check for errors

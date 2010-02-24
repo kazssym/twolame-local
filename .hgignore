@@ -1,0 +1,26 @@
+\.orig$
+\.orig\..*$
+\.chg\..*$
+\.rej$
+\.conflict\~$
+
+syntax: glob
+twolame.exe
+stwolame.exe
+libtwolame.la
+*.o
+*.lo
+.libs/
+.deps/
+
+config.h
+stamp-h1
+libtool
+Makefile
+config.status
+config.log
+
+twolame.pc
+
+# NetBeans-specific
+nbproject/private/
