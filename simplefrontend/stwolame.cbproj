@@ -18,6 +18,7 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<Defines>LIBTWOLAME_STATIC;$(Defines)</Defines>
 			<BCC_PCHUsage>None</BCC_PCHUsage>
 			<NoVCL>true</NoVCL>
 			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;vcldbx.bpi;bdertl.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclie.bpi;DbxClientDriver.bpi;DbxCommonDriver.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;dbexpress.bpi</PackageImports>
@@ -58,14 +59,6 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="simplefrontend.c">
-				<VirtualFolder>{8A541C08-01B1-499B-B2B8-C9BC176AFC87}</VirtualFolder>
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<None Include="audio_wave.h">
-				<VirtualFolder>{64958086-BF00-4E4F-A27F-CE1557D6A143}</VirtualFolder>
-				<BuildOrder>1</BuildOrder>
-			</None>
 			<CppCompile Include="audio_wave.c">
 				<VirtualFolder>{8A541C08-01B1-499B-B2B8-C9BC176AFC87}</VirtualFolder>
 				<BuildOrder>2</BuildOrder>
@@ -74,6 +67,14 @@
 				<IgnorePath>true</IgnorePath>
 				<BuildOrder>3</BuildOrder>
 			</LibFiles>
+			<CppCompile Include="simplefrontend.c">
+				<VirtualFolder>{8A541C08-01B1-499B-B2B8-C9BC176AFC87}</VirtualFolder>
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<None Include="audio_wave.h">
+				<VirtualFolder>{64958086-BF00-4E4F-A27F-CE1557D6A143}</VirtualFolder>
+				<BuildOrder>1</BuildOrder>
+			</None>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
