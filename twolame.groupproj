@@ -6,6 +6,9 @@
 			<Projects Include="libtwolame\libtwolame.cbproj">
 				<Dependencies/>
 			</Projects>
+			<Projects Include="libtwolame\dll\twolame.cbproj">
+				<Dependencies/>
+			</Projects>
 			<Projects Include="simplefrontend\stwolame.cbproj">
 				<Dependencies>libtwolame\libtwolame.cbproj</Dependencies>
 			</Projects>
@@ -26,6 +29,15 @@
 		<Target Name="libtwolame:Make">
 			<MSBuild Targets="Make" Projects="libtwolame\libtwolame.cbproj"/>
 		</Target>
+		<Target Name="twolame">
+			<MSBuild Projects="libtwolame\dll\twolame.cbproj"/>
+		</Target>
+		<Target Name="twolame:Clean">
+			<MSBuild Targets="Clean" Projects="libtwolame\dll\twolame.cbproj"/>
+		</Target>
+		<Target Name="twolame:Make">
+			<MSBuild Targets="Make" Projects="libtwolame\dll\twolame.cbproj"/>
+		</Target>
 		<Target DependsOnTargets="libtwolame" Name="stwolame">
 			<MSBuild Projects="simplefrontend\stwolame.cbproj"/>
 		</Target>
@@ -36,13 +48,13 @@
 			<MSBuild Targets="Make" Projects="simplefrontend\stwolame.cbproj"/>
 		</Target>
 		<Target Name="Build">
-			<CallTarget Targets="libtwolame;stwolame"/>
+			<CallTarget Targets="libtwolame;twolame;stwolame"/>
 		</Target>
 		<Target Name="Clean">
-			<CallTarget Targets="libtwolame:Clean;stwolame:Clean"/>
+			<CallTarget Targets="libtwolame:Clean;twolame:Clean;stwolame:Clean"/>
 		</Target>
 		<Target Name="Make">
-			<CallTarget Targets="libtwolame:Make;stwolame:Make"/>
+			<CallTarget Targets="libtwolame:Make;twolame:Make;stwolame:Make"/>
 		</Target>
 		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 	</Project>
