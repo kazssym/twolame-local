@@ -1,20 +1,11 @@
-\.orig$
-\.orig\..*$
-\.chg\..*$
-\.rej$
-\.conflict\~$
-
 syntax: glob
+
 twolame.exe
 stwolame.exe
 libtwolame.la
 libtwolame.lib
-*.map
-*.tds
 *.o
 *.lo
-*.obj
-.libs/
 .deps/
 
 config.h
@@ -26,11 +17,24 @@ config.log
 
 twolame.pc
 
-# Backups
+# Common binary directories
+.libs/
+Debug/
+Release/
+
+# Common backup files
 *~
 
-# RAD Studio-specific
+# RAD Studio local files
 *.local
 
 # NetBeans-specific
 nbproject/private/
+
+syntax: regexp
+
+\.orig$
+\.orig\..*$
+\.chg\..*$
+\.rej$
+\.conflict\~$
