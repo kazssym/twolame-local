@@ -29,7 +29,7 @@
 
 #include "twolame.h"
 #include "common.h"
-#include "mem.h"
+#include "mem_.h"
 #include "fft.h"
 #include "ath.h"
 #include "psycho_4.h"

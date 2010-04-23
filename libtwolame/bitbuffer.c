@@ -29,7 +29,7 @@
 #include "twolame.h"
 #include "common.h"
 #include "bitbuffer.h"
-#include "mem.h"
+#include "mem_.h"
 
 
 /*create bit buffer*/
