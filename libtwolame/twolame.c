@@ -32,7 +32,7 @@
 #include "twolame.h"
 #include "common.h"
 #include "bitbuffer.h"
-#include "mem_.h"
+#include "mem.h"
 #include "crc.h"
 #include "dab.h"
 #include "psycho_n1.h"

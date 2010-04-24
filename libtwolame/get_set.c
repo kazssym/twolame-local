@@ -31,7 +31,7 @@
 #include "twolame.h"
 #include "bitbuffer.h"
 #include "common.h"
-#include "mem_.h"
+#include "mem.h"
 #include "util.h"
 #include "energy.h"
 

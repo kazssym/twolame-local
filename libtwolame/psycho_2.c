@@ -30,7 +30,7 @@
 
 #include "twolame.h"
 #include "common.h"
-#include "mem_.h"
+#include "mem.h"
 #include "fft.h"
 #include "psycho_2.h"
 

@@ -29,7 +29,7 @@
 
 #include "twolame.h"
 #include "common.h"
-#include "mem_.h"
+#include "mem.h"
 #include "bitbuffer.h"
 #include "enwindow.h"
 #include "subband.h"
