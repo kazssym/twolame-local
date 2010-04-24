@@ -77,7 +77,7 @@
 #define			LN_TO_LOG10				0.2302585093
 
 #define			BITS_IN_A_BYTE			8
-#define			WORDBITS				16
+#define			WORD					16
 #define			MAX_NAME_SIZE			255
 #define			SBLIMIT					32
 #define			SSLIMIT					18
@@ -201,11 +201,7 @@ typedef FLOAT F22HBLK[2][2][HBLKSIZE];
 typedef FLOAT DCB[CBANDS];
 
 typedef struct psycho_4_mem_struct {
-#ifdef __cplusplus
-        int new_;
-#else
 	int new;
-#endif
 	int old;
 	int oldest;
 	
