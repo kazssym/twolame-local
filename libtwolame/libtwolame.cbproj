@@ -143,59 +143,45 @@
 				<BuildOrder>35</BuildOrder>
 			</None>
 			<CppCompile Include="encode.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>6</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="dab.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>5</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="energy.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>7</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="get_set.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>9</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="fft.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>8</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="ath.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>1</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="util.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>18</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="availbits.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>2</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="crc.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>4</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="bitbuffer.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>3</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="mem.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>10</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="subband.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>17</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="psycho_n1.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>16</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="twolame.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>0</BuildOrder>
 			</CppCompile>
 			<None Include="ath.h">
@@ -207,23 +193,18 @@
 				<BuildOrder>19</BuildOrder>
 			</None>
 			<CppCompile Include="psycho_1.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>12</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="psycho_0.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>11</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="psycho_2.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>13</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="psycho_4.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>15</BuildOrder>
 			</CppCompile>
 			<CppCompile Include="psycho_3.c">
-				<VirtualFolder>{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}</VirtualFolder>
 				<BuildOrder>14</BuildOrder>
 			</CppCompile>
 			<BuildConfiguration Include="Base">
@@ -298,7 +279,6 @@
 					</ProjectProperties>
 					<VFOLDERS>
 						<VFOLDER ID="{4516B8D9-0729-4AA7-98F4-33B656A6643F}" name="Headers"/>
-						<VFOLDER ID="{33FAC6C8-22DA-4066-AA73-BAFCCA2B06BF}" name="Sources"/>
 					</VFOLDERS>
 				</CPlusPlusBuilder.Personality>
 			</BorlandProject>
