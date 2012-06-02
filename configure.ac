@@ -1,19 +1,20 @@
-
-dnl Require autoconf version >= 2.57
-AC_PREREQ(2.57)
+dnl Require autoconf version >= 2.60
+AC_PREREQ(2.60)
 
 
 dnl ############# Initialization
 
-AC_INIT([twolame], [0.3.12], [twolame-discuss@lists.sourceforge.net])
+AC_INIT([twolame],[0.3.13],[twolame-discuss@lists.sourceforge.net])
 
 AC_CONFIG_SRCDIR(libtwolame/twolame.h)
-AC_CONFIG_AUX_DIR(build)
-AC_CANONICAL_SYSTEM
+AC_CONFIG_AUX_DIR(build-scripts)
+AC_CONFIG_MACRO_DIR(build-scripts)
+AM_INIT_AUTOMAKE([1.10])
 
-dnl Version 1.7 of automake is recommended
-AM_INIT_AUTOMAKE(1.7)
-AM_CONFIG_HEADER(build/config.h)
+LT_PREREQ([2.2])
+LT_INIT
+
+AM_MAINTAINER_MODE
 
 
 
@@ -42,22 +43,20 @@ AC_SUBST(TWOLAME_SO_VERSION)
 dnl ############# Compiler and tools Checks
 
 AC_PROG_CC
+AC_PROG_CC_C99
 AC_PROG_INSTALL
 AC_PROG_LN_S
-
 AC_PROG_LIBTOOL
+
 AC_C_BIGENDIAN
 AC_C_INLINE
+AC_C_CONST
 
-
-dnl ############# Configure Arguments
-
-AC_ARG_ENABLE(debug,
-	  [  --enable-debug=[no/yes]   turn on debugging],
-	  [ Debugging="Enabled" 
-		AC_DEFINE(DEBUG, 1, [ Define if debugging is enabled. ]) ],
-	  [ Debugging="Disabled" ]
-)
+if test "$USE_MAINTAINER_MODE" = yes; then
+  AC_PATH_PROG([PATH_ASCIIDOC], [asciidoc])
+  AC_PATH_PROG([PATH_DOXYGEN], [doxygen])
+  AC_PATH_PROG([PATH_XMLTO], [xmlto])
+fi
 
 
 
@@ -94,8 +93,8 @@ PKG_CHECK_MODULES(SNDFILE, sndfile >= 1.0.0,
 	) ]
 )
 			
-AC_SUBST( SNDFILE_CFLAGS )
-AC_SUBST( SNDFILE_LIBS )
+AC_SUBST(SNDFILE_CFLAGS)
+AC_SUBST(SNDFILE_LIBS)
 
 
 
@@ -111,21 +110,6 @@ AC_CHECK_HEADER(getopt.h,
 
 
 
-dnl ############## Compiler and Linker Flags
-
-CFLAGS="$CFLAGS -std=c99 -Wunused -Wall"
-LDFLAGS="$LDFLAGS"
-
-# If debugging is enabled then make warnings errors
-if test "$Debugging" = "Enabled"; then
-	CFLAGS="$CFLAGS -g -Werror -pedantic"
-else
-	# Optimize flag. 3 is about as high as you can sanely go with GCC3.2.
-	CFLAGS="$CFLAGS -O3"
-fi
-
-
-
 dnl ############## Only compile frontend if sndfile is available
 
 TWOLAME_BIN=""
@@ -138,16 +122,35 @@ if test "x$HAVE_SNDFILE" = "xyes"; then
 else 
 	AC_MSG_WARN([Not building twolame frontend because libsndfile is missing.])
 fi
-AC_SUBST( TWOLAME_BIN )
+AC_SUBST(TWOLAME_BIN)
 
 
-dnl ############## Final Output
 
-AC_OUTPUT(
+dnl ############## Compiler and Linker Flags
+
+# If maintainer mode is enabled then make warnings errors
+if test "$USE_MAINTAINER_MODE" = yes; then
+	WARNING_CFLAGS="-Wall -Werror -pedantic -Wunused"
+  WARNING_CFLAGS="$WARNING_CFLAGS -Wmissing-prototypes -Wmissing-declarations"
+	AC_SUBST(WARNING_CFLAGS)
+fi
+
+
+
+dnl ############## Output files
+
+AC_CONFIG_HEADERS([libtwolame/config.h])
+
+AC_CONFIG_FILES([
 	Makefile \
 	twolame.pc \
 	doc/Makefile \
+	doc/html/Makefile \
+	doc/html/Doxyfile \
 	libtwolame/Makefile \
 	frontend/Makefile \
 	simplefrontend/Makefile \
-)
+	tests/Makefile \
+])
+
+AC_OUTPUT

@@ -18,7 +18,7 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  $Id: subband.h 156 2007-03-20 23:57:35Z nhumfrey $
+ *  $Id$
  *
  */
 
@@ -26,8 +26,8 @@
 #ifndef	_SUBBAND_H_
 #define	_SUBBAND_H_
 
-int init_subband (subband_mem *smem);
-void window_filter_subband(subband_mem *smem, short *pBuffer, int ch, FLOAT s[SBLIMIT]);
+int init_subband(subband_mem * smem);
+void window_filter_subband(subband_mem * smem, short *pBuffer, int ch, FLOAT s[SBLIMIT]);
 
 #endif
 
