@@ -19,7 +19,7 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  $Id: energy.h 156 2007-03-20 23:57:35Z nhumfrey $
+ *  $Id$
  *
  */
 
@@ -27,8 +27,8 @@
 #ifndef	_ENERGY_H_
 #define	_ENERGY_H_
 
-int get_required_energy_bits( twolame_options *glopts );
-void do_energy_levels(twolame_options *glopts, bit_stream *bs);
+int get_required_energy_bits(twolame_options * glopts);
+void do_energy_levels(twolame_options * glopts, bit_stream * bs);
 
 #endif
 

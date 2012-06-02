@@ -18,15 +18,16 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  $Id: psycho_4.h 156 2007-03-20 23:57:35Z nhumfrey $
+ *  $Id$
  *
  */
 
 #ifndef	_PSYCHO_4_H_
 #define	_PSYCHO_4_H_
 
-void psycho_4 (twolame_options *glopts, short int buffer[2][1152], short int savebuf[2][1056], FLOAT smr[2][32]);
-void psycho_4_deinit(psycho_4_mem **mem);
+void psycho_4(twolame_options * glopts, short int buffer[2][1152], short int savebuf[2][1056],
+              FLOAT smr[2][32]);
+void psycho_4_deinit(psycho_4_mem ** mem);
 
 #endif
 

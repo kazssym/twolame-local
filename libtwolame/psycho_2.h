@@ -18,15 +18,17 @@
  *  License along with this library; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- *  $Id: psycho_2.h 156 2007-03-20 23:57:35Z nhumfrey $
+ *  $Id$
  *
  */
 
 #ifndef	_PSYCHO_2_H_
 #define	_PSYCHO_2_H_
 
-void psycho_2 (twolame_options *glopts, short int buffer[2][1152], short int savebuf[2][1056], FLOAT smr[2][32]);
-void psycho_2_deinit(psycho_2_mem **mem);
+psycho_2_mem *psycho_2_init(twolame_options * glopts, int sfreq);
+void psycho_2(twolame_options * glopts, short int buffer[2][1152], short int savebuf[2][1056],
+              FLOAT smr[2][32]);
+void psycho_2_deinit(psycho_2_mem ** mem);
 
 #endif
 
