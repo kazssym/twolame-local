@@ -1,8 +1,12 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
 			<ProjectGuid>{395F70CB-826B-4B14-98E0-51C1A961CFF4}</ProjectGuid>
-			<ProjectVersion>12.0</ProjectVersion>
+			<ProjectVersion>12.3</ProjectVersion>
 			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Base>True</Base>
+			<Platform>Win32</Platform>
+			<AppType>StaticLibrary</AppType>
+			<FrameworkType>None</FrameworkType>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
 			<Base>true</Base>
@@ -18,6 +22,8 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<ILINK_GenerateDRC>True</ILINK_GenerateDRC>
 			<BCC_InstructionSet>5</BCC_InstructionSet>
 			<BCC_PCHUsage>None</BCC_PCHUsage>
 			<ProjectType>CppStaticLibrary</ProjectType>
@@ -58,168 +64,169 @@
 			<TASM_Debugging>None</TASM_Debugging>
 		</PropertyGroup>
 		<ItemGroup>
-			<None Include="energy.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>27</BuildOrder>
-			</None>
-			<None Include="encode.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>26</BuildOrder>
-			</None>
-			<None Include="enwindow.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>28</BuildOrder>
-			</None>
-			<None Include="mem.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>30</BuildOrder>
-			</None>
-			<None Include="fft.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>29</BuildOrder>
-			</None>
-			<None Include="bitbuffer.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>22</BuildOrder>
-			</None>
-			<None Include="availbits.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>21</BuildOrder>
-			</None>
-			<None Include="common.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>23</BuildOrder>
-			</None>
-			<None Include="dab.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>25</BuildOrder>
-			</None>
-			<None Include="crc.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>24</BuildOrder>
-			</None>
-			<None Include="psycho_0.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>31</BuildOrder>
-			</None>
-			<None Include="psycho_4.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>38</BuildOrder>
-			</None>
-			<None Include="psycho_3.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>37</BuildOrder>
-			</None>
-			<None Include="psycho_n1.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>39</BuildOrder>
-			</None>
-			<None Include="twolame.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>41</BuildOrder>
-			</None>
-			<None Include="subband.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>40</BuildOrder>
-			</None>
-			<None Include="psycho_1_critband.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>33</BuildOrder>
-			</None>
-			<None Include="psycho_1.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>32</BuildOrder>
-			</None>
-			<None Include="psycho_1_freqtable.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>34</BuildOrder>
-			</None>
-			<None Include="psycho_2_absthr.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>36</BuildOrder>
-			</None>
-			<None Include="psycho_2.h">
-				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>35</BuildOrder>
-			</None>
-			<CppCompile Include="encode.c">
-				<BuildOrder>6</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="dab.c">
-				<BuildOrder>5</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="energy.c">
-				<BuildOrder>7</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="get_set.c">
-				<BuildOrder>9</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="fft.c">
-				<BuildOrder>8</BuildOrder>
-			</CppCompile>
 			<CppCompile Include="ath.c">
 				<BuildOrder>1</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="util.c">
-				<BuildOrder>18</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="availbits.c">
-				<BuildOrder>2</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="crc.c">
-				<BuildOrder>4</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="bitbuffer.c">
-				<BuildOrder>3</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="mem.c">
-				<BuildOrder>10</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="subband.c">
-				<BuildOrder>17</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="psycho_n1.c">
-				<BuildOrder>16</BuildOrder>
-			</CppCompile>
-			<CppCompile Include="twolame.c">
-				<BuildOrder>0</BuildOrder>
 			</CppCompile>
 			<None Include="ath.h">
 				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
 				<BuildOrder>20</BuildOrder>
 			</None>
-			<None Include="util.h">
+			<CppCompile Include="availbits.c">
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<None Include="availbits.h">
 				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
-				<BuildOrder>19</BuildOrder>
+				<BuildOrder>21</BuildOrder>
+			</None>
+			<CppCompile Include="bitbuffer.c">
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<None Include="bitbuffer.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>22</BuildOrder>
+			</None>
+			<None Include="common.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>23</BuildOrder>
+			</None>
+			<CppCompile Include="crc.c">
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<None Include="crc.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>24</BuildOrder>
+			</None>
+			<CppCompile Include="dab.c">
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<None Include="dab.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>25</BuildOrder>
+			</None>
+			<CppCompile Include="encode.c">
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<None Include="encode.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>26</BuildOrder>
+			</None>
+			<CppCompile Include="energy.c">
+				<BuildOrder>7</BuildOrder>
+			</CppCompile>
+			<None Include="energy.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>27</BuildOrder>
+			</None>
+			<None Include="enwindow.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>28</BuildOrder>
+			</None>
+			<CppCompile Include="fft.c">
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<None Include="fft.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>29</BuildOrder>
+			</None>
+			<CppCompile Include="get_set.c">
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="mem.c">
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<None Include="mem.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>30</BuildOrder>
+			</None>
+			<CppCompile Include="psycho_0.c">
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<None Include="psycho_0.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>31</BuildOrder>
 			</None>
 			<CppCompile Include="psycho_1.c">
 				<BuildOrder>12</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="psycho_0.c">
-				<BuildOrder>11</BuildOrder>
-			</CppCompile>
+			<None Include="psycho_1.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>32</BuildOrder>
+			</None>
+			<None Include="psycho_1_critband.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>33</BuildOrder>
+			</None>
+			<None Include="psycho_1_freqtable.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>34</BuildOrder>
+			</None>
 			<CppCompile Include="psycho_2.c">
 				<BuildOrder>13</BuildOrder>
 			</CppCompile>
-			<CppCompile Include="psycho_4.c">
-				<BuildOrder>15</BuildOrder>
-			</CppCompile>
+			<None Include="psycho_2.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>35</BuildOrder>
+			</None>
+			<None Include="psycho_2_absthr.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>36</BuildOrder>
+			</None>
 			<CppCompile Include="psycho_3.c">
 				<BuildOrder>14</BuildOrder>
 			</CppCompile>
-			<BuildConfiguration Include="Base">
-				<Key>Base</Key>
-			</BuildConfiguration>
+			<None Include="psycho_3.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>37</BuildOrder>
+			</None>
+			<CppCompile Include="psycho_4.c">
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<None Include="psycho_4.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>38</BuildOrder>
+			</None>
+			<CppCompile Include="psycho_n1.c">
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<None Include="psycho_n1.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>39</BuildOrder>
+			</None>
+			<CppCompile Include="subband.c">
+				<BuildOrder>17</BuildOrder>
+			</CppCompile>
+			<None Include="subband.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>40</BuildOrder>
+			</None>
+			<CppCompile Include="twolame.c">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<None Include="twolame.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>41</BuildOrder>
+			</None>
+			<CppCompile Include="util.c">
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<None Include="util.h">
+				<VirtualFolder>{4516B8D9-0729-4AA7-98F4-33B656A6643F}</VirtualFolder>
+				<BuildOrder>19</BuildOrder>
+			</None>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
 			</BuildConfiguration>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_1</Key>
 				<CfgParent>Base</CfgParent>
 			</BuildConfiguration>
 		</ItemGroup>
-		<Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
 		<ProjectExtensions>
 			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
 			<Borland.ProjectType>CppStaticLibrary</Borland.ProjectType>
@@ -256,11 +263,6 @@
 						<Debugging Name="DebugSourceDirs"/>
 					</Debugging>
 					<Parameters>
-						<Parameters Name="RunParams"/>
-						<Parameters Name="Launcher"/>
-						<Parameters Name="UseLauncher">False</Parameters>
-						<Parameters Name="DebugCWD"/>
-						<Parameters Name="HostApplication"/>
 						<Parameters Name="RemoteHost"/>
 						<Parameters Name="RemotePath"/>
 						<Parameters Name="RemoteParams"/>
@@ -268,9 +270,6 @@
 						<Parameters Name="UseRemoteLauncher">False</Parameters>
 						<Parameters Name="RemoteCWD"/>
 						<Parameters Name="RemoteDebug">False</Parameters>
-						<Parameters Name="Debug Symbols Search Path"/>
-						<Parameters Name="LoadAllSymbols">True</Parameters>
-						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
 					</Parameters>
 					<ProjectProperties>
 						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
@@ -281,6 +280,9 @@
 						<VFOLDER ID="{4516B8D9-0729-4AA7-98F4-33B656A6643F}" name="Headers"/>
 					</VFOLDERS>
 				</CPlusPlusBuilder.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
 		</ProjectExtensions>
