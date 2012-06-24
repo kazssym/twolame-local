@@ -24,28 +24,28 @@
 			<MSBuild Projects="libtwolame\libtwolame.cbproj"/>
 		</Target>
 		<Target Name="libtwolame:Clean">
-			<MSBuild Targets="Clean" Projects="libtwolame\libtwolame.cbproj"/>
+			<MSBuild Projects="libtwolame\libtwolame.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="libtwolame:Make">
-			<MSBuild Targets="Make" Projects="libtwolame\libtwolame.cbproj"/>
+			<MSBuild Projects="libtwolame\libtwolame.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="twolame">
 			<MSBuild Projects="libtwolame\dll\twolame.cbproj"/>
 		</Target>
 		<Target Name="twolame:Clean">
-			<MSBuild Targets="Clean" Projects="libtwolame\dll\twolame.cbproj"/>
+			<MSBuild Projects="libtwolame\dll\twolame.cbproj" Targets="Clean"/>
 		</Target>
 		<Target Name="twolame:Make">
-			<MSBuild Targets="Make" Projects="libtwolame\dll\twolame.cbproj"/>
+			<MSBuild Projects="libtwolame\dll\twolame.cbproj" Targets="Make"/>
 		</Target>
-		<Target DependsOnTargets="libtwolame" Name="stwolame">
+		<Target Name="stwolame" DependsOnTargets="libtwolame">
 			<MSBuild Projects="simplefrontend\stwolame.cbproj"/>
 		</Target>
-		<Target DependsOnTargets="libtwolame:Clean" Name="stwolame:Clean">
-			<MSBuild Targets="Clean" Projects="simplefrontend\stwolame.cbproj"/>
+		<Target Name="stwolame:Clean" DependsOnTargets="libtwolame:Clean">
+			<MSBuild Projects="simplefrontend\stwolame.cbproj" Targets="Clean"/>
 		</Target>
-		<Target DependsOnTargets="libtwolame:Make" Name="stwolame:Make">
-			<MSBuild Targets="Make" Projects="simplefrontend\stwolame.cbproj"/>
+		<Target Name="stwolame:Make" DependsOnTargets="libtwolame:Make">
+			<MSBuild Projects="simplefrontend\stwolame.cbproj" Targets="Make"/>
 		</Target>
 		<Target Name="Build">
 			<CallTarget Targets="libtwolame;twolame;stwolame"/>
@@ -56,5 +56,5 @@
 		<Target Name="Make">
 			<CallTarget Targets="libtwolame:Make;twolame:Make;stwolame:Make"/>
 		</Target>
-		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
 	</Project>
