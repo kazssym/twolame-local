@@ -562,7 +562,9 @@ static FILE *open_output_file(char *filename)
     // Do they want STDOUT ?
     if (strncmp(filename, "-", 1) == 0) {
         file = stdout;
-                _setmode (fileno (file), O_BINARY);
+#ifdef O_BINARY
+        _setmode(fileno(file), O_BINARY);
+#endif
     } else {
         file = fopen(filename, "wb");
     }
