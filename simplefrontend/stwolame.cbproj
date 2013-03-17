@@ -93,6 +93,9 @@
         <CppCompile Include="simplefrontend.c">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
+        <CppCompile Include="_libs.c">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
